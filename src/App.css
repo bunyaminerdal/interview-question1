@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+.main-container {
+  height: 100vh;
+  padding: 80px 0 0 80px;
+  background-color: rgb(24, 44, 73);
+}
+.event-main-container {
+  height: calc(100vh - 80px);
+  background-color: rgb(235, 236, 239);
+  padding-top: 20px;
+  --bs-gutter-x: 0;
+  overflow: hidden;
+}
+.event-list-title {
+  padding: 10px;
+  font-size: x-large;
+  font-weight: 700;
+}
+.event-list-container {
+  height: calc(100vh - 80px);
+
+  overflow: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.event-container {
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  --bs-gutter-x: 0;
+  transition: background-color 300ms;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.event-container:hover {
+  background-color: rgb(251, 245, 214, 0.5);
+}
+.event-container-selected {
+  background-color: rgb(251, 245, 214) !important;
+}
+.event-part-action {
+  width: 10px;
+  height: 68px;
+  background-color: rgb(233, 207, 48);
+  left: 0px;
+  right: 1px;
+  top: 0px;
+  position: absolute;
+}
+.event-title {
+  font-weight: 700;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.event-info {
+  font-weight: 400;
+}
+
+.event-detail-title {
+  padding: 10px;
+  font-size: x-large;
+  font-weight: 700;
+}
+.event-detail-container {
+  height: calc(100vh - 80px);
+
+  overflow: scroll;
+  margin: 10px;
+}
+
+.event-detail-button-container {
+  background-color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.event-detail-button-container button {
+  min-width: 200px;
+  padding: 4px;
   color: white;
+  font-weight: 400;
+  border-radius: 5px;
+  border: 0px solid black;
+  transition: scale 400ms;
+}
+.event-detail-button-container button:nth-child(1) {
+  background-color: rgb(68, 80, 99);
+}
+.event-detail-button-container button:nth-child(2) {
+  background-color: rgb(60, 168, 54);
+}
+.event-detail-button-container button:hover,
+.event-detail-button-container button:focus,
+.event-detail-button-container button:active {
+  scale: 0.99 !important;
+  color: rgb(224, 224, 224) !important;
 }
 
-.App-link {
-  color: #61dafb;
+.event-detail-operations-button-container {
+  padding: 10px 10px 0 10px;
+  border-bottom: 2px solid black;
+  height: 57px;
+}
+.event-detail-operations-button-container button {
+  padding: 10px;
+  margin-right: 10px;
+  box-sizing: content-box;
+  border: none;
+  color: rgba(128, 128, 128, 0.566);
+}
+.event-detail-operations-button-container button:hover,
+.event-detail-operations-button-container button:active,
+.event-detail-operations-button-container button:focus {
+  border-bottom: 5px solid rgb(60, 168, 54);
+  color: black;
+}
+.event-detail-operations-button-container .active {
+  border-bottom: 5px solid rgb(60, 168, 54);
+  color: black;
+}
+.event-details-container {
+  padding: 10px;
+}
+.leaflet-container {
+  height: 400px;
+  border: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.event-details-container img {
+  height: 400px;
+  object-fit: fill;
 }
