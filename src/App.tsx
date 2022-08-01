@@ -10,7 +10,7 @@ import { useAppDispatch } from './store';
 function App() {
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(getEventDatas(null));
+    dispatch(getEventDatas());
   }, [dispatch])
 
 

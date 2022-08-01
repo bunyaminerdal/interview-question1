@@ -9,7 +9,7 @@ const eventSlice = createSlice({
     name: "eventdata",
     initialState,
     reducers: {
-        getEventDatas: (state, action) => {
+        getEventDatas: (state) => {
             state.datas = example_response.data;
             state.selectedData = example_response.data[0] ? example_response.data[0] : {} as data;
         },

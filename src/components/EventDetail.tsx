@@ -5,7 +5,7 @@ import ReactAudioPlayer from 'react-audio-player'
 import { ReactComponent as Fullscreen } from '../icons/Fullscreen.svg'
 import { ReactComponent as FullscreenExit } from '../icons/Fullscreen-exit.svg'
 import { Box, Button, Grid, Stack, Typography } from '@mui/material'
-import { GrayButton, GreenButton } from './styled/StyledButton'
+import { StyledButton } from './styled/StyledButton'
 
 const selectionEnum = {
     details: 'details',
@@ -23,9 +23,14 @@ const EventDetail = () => {
         <Grid item md={6} sm={12} xs={12} lg={5} xl={4}>
             <Typography variant="h5" fontWeight="700" p={2}>EVENT DETAILS</Typography>
             <Box sx={{ backgroundColor: "#ffffff", margin: 1 }}>
-                <Stack direction="row" sx={{ padding: 2 }}>
-                    <GrayButton variant='contained' sx={{ fontSize: { xs: 14, sm: 16, md: 14, lg: 16 } }} > NO ACTION NEEDED</GrayButton>
-                    <GreenButton variant='contained' sx={{ fontSize: { xs: 14, sm: 16, md: 14, lg: 16 } }} > TAKE ACTION</GreenButton>
+                <Stack direction="row" sx={{ padding: 2, gap: 1 }}>
+                    <Grid item xs={6} >
+                        <StyledButton fullWidth color='secondary' variant='contained'  > NO ACTION NEEDED</StyledButton>
+                    </Grid>
+                    <Grid item xs={6} >
+                        <StyledButton fullWidth color='primary' variant='contained'  > TAKE ACTION</StyledButton>
+                    </Grid>
+
                 </Stack>
                 <div className='event-detail-operations-button-container'>
                     <button className={selection === selectionEnum.details ? 'active' : ''} onClick={() => setSelection(selectionEnum.details)}>DETAILS</button>
