@@ -1,3 +1,4 @@
+import { Box, Grid, Stack } from '@mui/material';
 import { useEffect } from 'react';
 import './App.css';
 import EventDetail from './components/EventDetail';
@@ -14,12 +15,12 @@ function App() {
 
 
   return (
-    <div className='main-container'>
-      <div className="row event-main-container">
+    <Box>
+      <Grid container spacing={1} sx={{ flexDirection: { sm: 'column-reverse', md: 'row', xs: 'column-reverse' } }}>
         <EventList />
         <EventDetail />
-      </div>
-    </div>
+      </Grid>
+    </Box>
 
   );
 }

@@ -1,3 +1,4 @@
+import { Box, Grid } from '@mui/material';
 import { setSelectedEvent } from '../features/eventSlice';
 import { useAppDispatch, useAppSelector } from '../store';
 
@@ -12,7 +13,7 @@ const EventList = () => {
         return converteddate.toLocaleDateString() + " " + converteddate.toLocaleTimeString();
     }
     return (
-        <div className='col-8'>
+        <Grid item md={7} sm={12} xs={12}>
             <div className='event-list-title'>EVENTS</div>
             <div className="event-list-container">
                 {datas.map(data => {
@@ -25,7 +26,7 @@ const EventList = () => {
                     </div>
                 })}
             </div>
-        </div>
+        </Grid>
     )
 }
 

@@ -6,7 +6,7 @@ const initialState = {
     selectedData: {} as data,
 }
 const eventSlice = createSlice({
-    name: "events",
+    name: "eventdata",
     initialState,
     reducers: {
         getEventDatas: (state, action) => {

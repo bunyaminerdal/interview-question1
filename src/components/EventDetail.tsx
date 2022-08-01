@@ -4,6 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import ReactAudioPlayer from 'react-audio-player'
 import { ReactComponent as Fullscreen } from '../icons/Fullscreen.svg'
 import { ReactComponent as FullscreenExit } from '../icons/Fullscreen-exit.svg'
+import { Grid } from '@mui/material'
 
 const selectionEnum = {
     details: 'details',
@@ -18,7 +19,7 @@ const EventDetail = () => {
         setSelection(selectionEnum.details)
     }, [selectedData])
     return (
-        <div className='col-4'>
+        <Grid item md={5} sm={12} xs={12}>
             <div className='event-detail-title'>EVENT DETAILS</div>
             <div className="event-detail-container">
                 <div className='event-detail-button-container'>
@@ -79,7 +80,7 @@ const EventDetail = () => {
                 </div>
             </div>
 
-        </div>
+        </Grid>
     )
 }
 
