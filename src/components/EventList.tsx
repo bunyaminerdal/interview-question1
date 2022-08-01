@@ -13,8 +13,8 @@ const EventList = () => {
         return converteddate.toLocaleDateString() + " " + converteddate.toLocaleTimeString();
     }
     return (
-        <Grid item md={6} sm={12} xs={12} lg={8}>
-            <Typography variant="h5" fontWeight="700" p={2}>EVENT DETAILS</Typography>
+        <Grid item md={6} sm={12} xs={12} lg={7} xl={8}>
+            <Typography variant="h5" fontWeight="700" p={2}>EVENTS</Typography>
             <div className="event-list-container">
                 {datas.map(data => {
                     return <div className={selectedData.id === data.id ? 'event-container event-container-selected row' : 'event-container row'} onClick={() => eventSelectHandler(data.id)} key={data.id}>

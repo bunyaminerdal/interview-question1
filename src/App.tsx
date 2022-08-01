@@ -16,12 +16,11 @@ function App() {
 
   return (
     <Box>
-      <Grid container spacing={1} sx={{ flexDirection: { sm: 'column-reverse', md: 'row', xs: 'column-reverse' } }}>
+      <Grid container spacing={1} sx={{ backgroundColor: "#EBECEF", flexDirection: { sm: 'column-reverse', md: 'row', xs: 'column-reverse' } }}>
         <EventList />
         <EventDetail />
       </Grid>
     </Box>
-
   );
 }
 
