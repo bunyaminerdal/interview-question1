@@ -4,7 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import ReactAudioPlayer from 'react-audio-player'
 import { ReactComponent as Fullscreen } from '../icons/Fullscreen.svg'
 import { ReactComponent as FullscreenExit } from '../icons/Fullscreen-exit.svg'
-import { Grid } from '@mui/material'
+import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 
 const selectionEnum = {
     details: 'details',
@@ -13,19 +13,20 @@ const selectionEnum = {
 }
 const EventDetail = () => {
     const [selection, setSelection] = useState(selectionEnum.details)
-    const { selectedData } = useAppSelector(state => state.events)
+    const { selectedData } = useAppSelector(state => state.eventdata)
 
     useEffect(() => {
         setSelection(selectionEnum.details)
     }, [selectedData])
     return (
-        <Grid item md={5} sm={12} xs={12}>
-            <div className='event-detail-title'>EVENT DETAILS</div>
-            <div className="event-detail-container">
-                <div className='event-detail-button-container'>
-                    <button>NO ACTION NEEDED</button>
-                    <button>TAKE ACTION</button>
-                </div>
+        <Grid item md={6} sm={12} xs={12} lg={4}>
+            <Typography variant="h5" fontWeight="700" p={2}>EVENT DETAILS</Typography>
+            <Box>
+                <Stack direction="row">
+                    <Button variant='contained' sx={{ margin: 0.5, minWidth: 200 }}> NO ACTION NEEDED</Button>
+                    <Button variant='contained' sx={{ margin: 0.5, minWidth: 200 }}> TAKE ACTION</Button>
+
+                </Stack>
                 <div className='event-detail-operations-button-container'>
                     <button className={selection === selectionEnum.details ? 'active' : ''} onClick={() => setSelection(selectionEnum.details)}>DETAILS</button>
                     <button className={selection === selectionEnum.location ? 'active' : ''} onClick={() => setSelection(selectionEnum.location)}>LOCATION</button>
@@ -78,9 +79,9 @@ const EventDetail = () => {
 
                     </div> : null}
                 </div>
-            </div>
-
-        </Grid>
+            </Box>
+            <hr />
+        </Grid >
     )
 }
 
