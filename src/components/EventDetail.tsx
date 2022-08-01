@@ -4,7 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import ReactAudioPlayer from 'react-audio-player'
 import { ReactComponent as Fullscreen } from '../icons/Fullscreen.svg'
 import { ReactComponent as FullscreenExit } from '../icons/Fullscreen-exit.svg'
-import { Box, Button, Grid, Stack, Typography } from '@mui/material'
+import { Box, Grid, Stack, Typography } from '@mui/material'
 import { StyledButton } from './styled/StyledButton'
 
 const selectionEnum = {
@@ -21,16 +21,15 @@ const EventDetail = () => {
     }, [selectedData])
     return (
         <Grid item md={6} sm={12} xs={12} lg={5} xl={4}>
-            <Typography variant="h5" fontWeight="700" p={2}>EVENT DETAILS</Typography>
-            <Box sx={{ backgroundColor: "#ffffff", margin: 1 }}>
-                <Stack direction="row" sx={{ padding: 2, gap: 1 }}>
+            <Typography variant="h5" fontWeight="700" p={2} sx={{ fontSize: 23 }} >EVENT DETAILS</Typography>
+            <Box sx={{ backgroundColor: "#ffffff", margin: 1, mt: 0 }}>
+                <Stack direction="row" sx={{ p: 2, gap: 1 }}>
                     <Grid item xs={6} >
-                        <StyledButton fullWidth color='secondary' variant='contained'  > NO ACTION NEEDED</StyledButton>
+                        <StyledButton fullWidth color='secondary' variant='contained'> NO ACTION NEEDED</StyledButton>
                     </Grid>
                     <Grid item xs={6} >
-                        <StyledButton fullWidth color='primary' variant='contained'  > TAKE ACTION</StyledButton>
+                        <StyledButton fullWidth color='primary' variant='contained'> TAKE ACTION</StyledButton>
                     </Grid>
-
                 </Stack>
                 <div className='event-detail-operations-button-container'>
                     <button className={selection === selectionEnum.details ? 'active' : ''} onClick={() => setSelection(selectionEnum.details)}>DETAILS</button>
